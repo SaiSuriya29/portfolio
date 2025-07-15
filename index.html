@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <title>Portfolio Website</title>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Sai Kiran</a>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Skills</a>
+      <a href="#">Education</a>
+      <a href="#">Experience</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="home">
+    <div class="home-img">
+      <img src="main.jpg" alt="Sai Kiran" />
+    </div>
+
+    <div class="home-content">
+      <h1>Hi, It's <span>Sai Kiran</span></h1>
+      <h3 class="typing-text">I'm a <span id="typing"></span></h3>
+      <p>
+        Data science professional with experience which includes 5+ projects
+        where I have worked on Sentiment Based Product Recommendation Systems,
+        Information Retrieval, and Automatic Ticket Classification. Currently
+        pursuing a Master’s in Data Science from LJMU. Skilled in data
+        manipulation and visualisation, with proficiency in Python, SQL,
+        Tableau, and Power BI, along with a strong passion for analytics. With
+        strong communication skills, currently seeking a Data Science Internship
+        to apply technical expertise in supporting data-driven decision-making
+        and contributing to business growth.
+      </p>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/sai-kiran-thamminaina-195b1b1ba/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/SaiSuriya29"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/sai___suriya_/"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+
+      <div class="buttons">
+        <a href="mailto:saikirant2907@gmail.com" class="btn">Hire me</a>
+        <a href="resume.pdf" class="btn" download>Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typed.js Script -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed("#typing", {
+      strings: [
+        "Data Scientist",
+        "NLP Engineer",
+        "ML Enthusiast",
+        "AI Researcher",
+        "Prompt Engineer"
+      ],
+      typeSpeed: 60,
+      backSpeed: 30,
+      backDelay: 1500,
+      loop: true
+    });
+  </script>
+</body>
+</html>
