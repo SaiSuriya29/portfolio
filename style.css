@@ -56,6 +56,7 @@ nav a {
   font-weight: 500;
   transition: 0.3s ease;
   border-bottom: 3px solid transparent;
+  position: relative; /* Needed for tooltips */
 }
 
 nav a:hover,
@@ -71,52 +72,51 @@ section {
 }
 
 /* Home Section */
-.home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    background-color: black;
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  background-color: black;
 }
 
-.home .home-content h1{
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
+.home .home-content h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
-span{
-    color: #b74b4b;
+span {
+  color: #b74b4b;
 }
 
-.home-content h3{
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+.home-content h3 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
-.home-content p{
-    font-size: 1.6rem;
+.home-content p {
+  font-size: 1.6rem;
 }
 
-.home-img{
-    border-radius: 50%;
+.home-img {
+  border-radius: 50%;
 }
 
-.home-img img{
-    position: relative;
-    width: 32vw;
-    border-radius: 50%;
-    box-shadow: 0 0 25px solid #b74b4b;
-    cursor: pointer;
-    transition: 0.2s linear;
+.home-img img {
+  position: relative;
+  width: 32vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px solid #b74b4b;
+  cursor: pointer;
+  transition: 0.2s linear;
 }
 
-.home-img img:hover{
-    font-size: 1.8rem;
-    font-weight: 500;
+.home-img img:hover {
+  font-size: 1.8rem;
+  font-weight: 500;
 }
-
 
 /* Social Icons */
 .social-icons a {
@@ -157,6 +157,7 @@ span{
   margin-right: 2rem;
   white-space: nowrap;
   text-align: center;
+  position: relative; /* For tooltip */
 }
 
 .btn:hover,
@@ -185,4 +186,52 @@ span{
     width: 70vw;
     margin-top: 4rem;
   }
+}
+
+/* ===== TOOLTIP STYLES ===== */
+
+/* Tooltip for nav links */
+nav a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #b74b4b;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+nav a:hover::after {
+  opacity: 1;
+}
+
+/* Tooltip for buttons (e.g., "Hire me") */
+.btn[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #b74b4b;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.btn[data-tooltip]:hover::after {
+  opacity: 1;
 }
